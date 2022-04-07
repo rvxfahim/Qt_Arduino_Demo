@@ -79,60 +79,6 @@ Rectangle {
             font.pixelSize: 32
             anchors.horizontalCenter: parent.horizontalCenter
         }
-
-        View3D {
-            id: view3D
-            x: 20
-            y: 256
-            width: 400
-            height: 400
-            SceneEnvironment {
-                id: sceneEnvironment
-                antialiasingMode: SceneEnvironment.MSAA
-                antialiasingQuality: SceneEnvironment.High
-            }
-
-            Node {
-                id: scene
-                DirectionalLight {
-                    id: directionalLight
-                }
-
-                PerspectiveCamera {
-                    id: sceneCamera
-                    y: 41
-                    z: 360
-                }
-
-                Model {
-                    id: cubeModel
-                    source: "#Cube"
-                    eulerRotation.x: 30
-                    eulerRotation.y: 45
-                    materials: cubeMaterial
-                    DefaultMaterial {
-                        id: cubeMaterial
-                        diffuseColor: "#4aee45"
-
-                        Effect {
-                            id: effect
-                            passes: renderPass
-                            Pass {
-                                id: renderPass
-                                shaders: [fragShader]
-                            }
-
-                            Shader {
-                                id: fragShader
-                                stage: Shader.Fragment
-                                shader: "effect_default_shader.frag"
-                            }
-                        }
-                    }
-                }
-            }
-            environment: sceneEnvironment
-        }
     }
 
     Timeline {
@@ -150,26 +96,12 @@ Rectangle {
         enabled: true
         startFrame: 0
         endFrame: 1000
-
-        KeyframeGroup {
-            target: directionalLight
-            property: "brightness"
-            Keyframe {
-                value: 0.5
-                frame: 0
-            }
-
-            Keyframe {
-                value: 1
-                frame: 1000
-            }
-        }
     }
 }
 
 /*##^##
 Designer {
-    D{i:0;formeditorZoom:0.66}D{i:10}D{i:11}D{i:12}D{i:17}
+    D{i:0;formeditorZoom:0.66}D{i:7}
 }
 ##^##*/
 

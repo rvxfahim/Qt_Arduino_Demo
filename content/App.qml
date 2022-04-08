@@ -32,7 +32,9 @@ import QtQuick.Window
 import Serial_port_arduino
 
 Window {
-    
+    //flags: Qt.FramelessWindowHint
+    // Material.theme: Material.Dark
+    // Material.accent: Material.BlueGrey
     width: mainScreen.width
     height: mainScreen.height
 
@@ -41,16 +43,23 @@ Window {
     
     Screen01 {
         id: mainScreen
-        okbutton.onClicked: {
-            backend.clicked_ok("passing string")
-            backend.invoke_backend_loop()
+        connect.onClicked: {
+            backend.connect_port(comboBox.displayText, comboBox1.displayText)
+            mainScreen.comboBox.model = [""]
+            connect.enabled = false
 }
     }
     Connections{
                 target: backend
+                function onListofserialportsReceived(list_of_serial_ports) {
+                    mainScreen.comboBox.model = list_of_serial_ports
+                }
                 function onClickAck(list_receive){
                     mainScreen.text1.text = "ack"
                     mainScreen.comboBox.model = list_receive
+                }
+                function onCommandArd(serialString){
+                    mainScreen.textArea.text = serialString
                 }
             }
 }

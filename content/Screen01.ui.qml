@@ -20,6 +20,10 @@ Rectangle {
 
     color: Constants.backgroundColor
     radius: 0
+    property alias mode: mode
+    property alias off_time: off_time
+    property alias on_time: on_time
+    property alias timer_text: timer_text
     property alias disconnect: disconnect
     property alias dial: dial
     property alias text4: text4
@@ -188,6 +192,14 @@ Rectangle {
                     anchors.left: parent.left
                     focus: false
                     anchors.leftMargin: 10
+
+                    Text {
+                        id: text3
+                        text: qsTr("Relay 1")
+                        anchors.verticalCenter: parent.verticalCenter
+                        font.pixelSize: 16
+                        anchors.horizontalCenter: parent.horizontalCenter
+                    }
                 }
 
                 Rectangle {
@@ -200,6 +212,14 @@ Rectangle {
                     border.width: 5
                     focus: false
                     anchors.horizontalCenter: parent.horizontalCenter
+
+                    Text {
+                        id: text5
+                        text: qsTr("Relay 2")
+                        anchors.verticalCenter: parent.verticalCenter
+                        font.pixelSize: 16
+                        anchors.horizontalCenter: parent.horizontalCenter
+                    }
                 }
 
                 Rectangle {
@@ -214,6 +234,14 @@ Rectangle {
                     anchors.right: parent.right
                     focus: false
                     anchors.rightMargin: 10
+
+                    Text {
+                        id: text6
+                        text: qsTr("Relay 3")
+                        anchors.verticalCenter: parent.verticalCenter
+                        font.pixelSize: 16
+                        anchors.horizontalCenter: parent.horizontalCenter
+                    }
                 }
 
                 Rectangle {
@@ -229,6 +257,14 @@ Rectangle {
                     focus: false
                     anchors.topMargin: 100
                     anchors.leftMargin: 10
+
+                    Text {
+                        id: text7
+                        text: qsTr("Relay 4")
+                        anchors.verticalCenter: parent.verticalCenter
+                        font.pixelSize: 16
+                        anchors.horizontalCenter: parent.horizontalCenter
+                    }
                 }
 
                 Rectangle {
@@ -243,6 +279,14 @@ Rectangle {
                     focus: false
                     anchors.topMargin: 100
                     anchors.horizontalCenter: parent.horizontalCenter
+
+                    Text {
+                        id: text8
+                        text: qsTr("Relay 5")
+                        anchors.verticalCenter: parent.verticalCenter
+                        font.pixelSize: 16
+                        anchors.horizontalCenter: parent.horizontalCenter
+                    }
                 }
 
                 Rectangle {
@@ -259,6 +303,14 @@ Rectangle {
                     focus: false
                     anchors.topMargin: 100
                     anchors.rightMargin: 10
+
+                    Text {
+                        id: text9
+                        text: qsTr("Relay 6")
+                        anchors.verticalCenter: parent.verticalCenter
+                        font.pixelSize: 16
+                        anchors.horizontalCenter: parent.horizontalCenter
+                    }
                 }
 
                 Rectangle {
@@ -274,6 +326,14 @@ Rectangle {
                     focus: false
                     anchors.topMargin: 200
                     anchors.leftMargin: 10
+
+                    Text {
+                        id: text10
+                        text: qsTr("Relay 7")
+                        anchors.verticalCenter: parent.verticalCenter
+                        font.pixelSize: 16
+                        anchors.horizontalCenter: parent.horizontalCenter
+                    }
                 }
 
                 Rectangle {
@@ -288,6 +348,14 @@ Rectangle {
                     focus: false
                     anchors.topMargin: 200
                     anchors.horizontalCenter: parent.horizontalCenter
+
+                    Text {
+                        id: text11
+                        text: qsTr("Relay 8")
+                        anchors.verticalCenter: parent.verticalCenter
+                        font.pixelSize: 16
+                        anchors.horizontalCenter: parent.horizontalCenter
+                    }
                 }
 
                 Rectangle {
@@ -304,6 +372,14 @@ Rectangle {
                     focus: false
                     anchors.topMargin: 200
                     anchors.rightMargin: 10
+
+                    Text {
+                        id: text12
+                        text: qsTr("Relay 9")
+                        anchors.verticalCenter: parent.verticalCenter
+                        font.pixelSize: 16
+                        anchors.horizontalCenter: parent.horizontalCenter
+                    }
                 }
 
                 Rectangle {
@@ -319,6 +395,14 @@ Rectangle {
                     focus: false
                     anchors.topMargin: 300
                     anchors.leftMargin: 10
+
+                    Text {
+                        id: text13
+                        text: qsTr("Relay 10")
+                        anchors.verticalCenter: parent.verticalCenter
+                        font.pixelSize: 16
+                        anchors.horizontalCenter: parent.horizontalCenter
+                    }
                 }
 
                 Rectangle {
@@ -333,6 +417,14 @@ Rectangle {
                     focus: false
                     anchors.topMargin: 300
                     anchors.horizontalCenter: parent.horizontalCenter
+
+                    Text {
+                        id: text14
+                        text: qsTr("Relay 11")
+                        anchors.verticalCenter: parent.verticalCenter
+                        font.pixelSize: 16
+                        anchors.horizontalCenter: parent.horizontalCenter
+                    }
                 }
 
                 Rectangle {
@@ -349,6 +441,14 @@ Rectangle {
                     focus: false
                     anchors.topMargin: 300
                     anchors.rightMargin: 10
+
+                    Text {
+                        id: text15
+                        text: qsTr("Relay 12")
+                        anchors.verticalCenter: parent.verticalCenter
+                        font.pixelSize: 16
+                        anchors.horizontalCenter: parent.horizontalCenter
+                    }
                 }
 
                 Rectangle {
@@ -364,6 +464,14 @@ Rectangle {
                     focus: false
                     anchors.topMargin: 400
                     anchors.leftMargin: 10
+
+                    Text {
+                        id: text16
+                        text: qsTr("Relay 13")
+                        anchors.verticalCenter: parent.verticalCenter
+                        font.pixelSize: 16
+                        anchors.horizontalCenter: parent.horizontalCenter
+                    }
                 }
 
                 Rectangle {
@@ -378,6 +486,14 @@ Rectangle {
                     focus: false
                     anchors.topMargin: 400
                     anchors.horizontalCenter: parent.horizontalCenter
+
+                    Text {
+                        id: text17
+                        text: qsTr("Relay 14")
+                        anchors.verticalCenter: parent.verticalCenter
+                        font.pixelSize: 16
+                        anchors.horizontalCenter: parent.horizontalCenter
+                    }
                 }
 
                 Rectangle {
@@ -394,6 +510,14 @@ Rectangle {
                     focus: false
                     anchors.topMargin: 400
                     anchors.rightMargin: 10
+
+                    Text {
+                        id: text18
+                        text: qsTr("Relay 15")
+                        anchors.verticalCenter: parent.verticalCenter
+                        font.pixelSize: 16
+                        anchors.horizontalCenter: parent.horizontalCenter
+                    }
                 }
 
                 Rectangle {
@@ -409,6 +533,14 @@ Rectangle {
                     focus: false
                     anchors.topMargin: 500
                     anchors.leftMargin: 10
+
+                    Text {
+                        id: text19
+                        text: qsTr("Relay 16")
+                        anchors.verticalCenter: parent.verticalCenter
+                        font.pixelSize: 16
+                        anchors.horizontalCenter: parent.horizontalCenter
+                    }
                 }
 
                 Rectangle {
@@ -423,6 +555,14 @@ Rectangle {
                     focus: false
                     anchors.topMargin: 500
                     anchors.horizontalCenter: parent.horizontalCenter
+
+                    Text {
+                        id: text20
+                        text: qsTr("Relay 17")
+                        anchors.verticalCenter: parent.verticalCenter
+                        font.pixelSize: 16
+                        anchors.horizontalCenter: parent.horizontalCenter
+                    }
                 }
 
                 Rectangle {
@@ -439,14 +579,65 @@ Rectangle {
                     focus: false
                     anchors.topMargin: 500
                     anchors.rightMargin: 10
+
+                    Text {
+                        id: text21
+                        text: qsTr("Relay 18")
+                        anchors.verticalCenter: parent.verticalCenter
+                        font.pixelSize: 16
+                        anchors.horizontalCenter: parent.horizontalCenter
+                    }
                 }
             }
 
             Text {
                 id: text4
-                x: 108
-                y: 74
-                text: qsTr("Progress")
+                x: 24
+                y: 508
+                text: qsTr("On Time:")
+                font.pixelSize: 48
+                font.family: "Segoe UI"
+            }
+
+            Text {
+                id: on_time
+                x: 243
+                y: 508
+                text: qsTr("00")
+                font.pixelSize: 48
+            }
+
+            Text {
+                id: text23
+                x: 24
+                y: 568
+                text: qsTr("Off Time:")
+                font.pixelSize: 48
+                font.family: "Segoe UI"
+            }
+
+            Text {
+                id: off_time
+                x: 243
+                y: 568
+                text: qsTr("00")
+                font.pixelSize: 48
+            }
+
+            Text {
+                id: text24
+                x: 24
+                y: 19
+                text: qsTr("Mode:")
+                font.pixelSize: 48
+                font.family: "Segoe UI"
+            }
+
+            Text {
+                id: mode
+                x: 164
+                y: 19
+                text: qsTr("Stopped")
                 font.pixelSize: 48
             }
         }
@@ -472,7 +663,7 @@ Rectangle {
 
 /*##^##
 Designer {
-    D{i:0;formeditorZoom:0.75}
+    D{i:0;formeditorZoom:0.66}D{i:52}D{i:54}
 }
 ##^##*/
 

@@ -222,6 +222,21 @@ Window {
                 function onProgressSig(numProgress){
                         
                         mainScreen.dial.value = numProgress
+                        mainScreen.timer_text.text = parseInt(numProgress)
                     }
-            }
+                function onTimeSig(time){
+                        mainScreen.on_time.text = time
+                    }
+                function onGaptimeSig(time2){
+                        mainScreen.off_time.text = time2
+                    }
+                function onPlaystatusSig(status){
+                        if(status == "Running"){
+                            mainScreen.mode.text = "Running"
+                        }
+                        else if(status == "Stopped"){
+                            mainScreen.mode.text = "Stopped"
+                        }
+                    }
+                }
 }

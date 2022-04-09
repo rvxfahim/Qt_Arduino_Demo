@@ -144,6 +144,18 @@ class serial_receive_thread(QThread):
             progress = serialString.split(":")[1]
             # print(progress)
             self.ui.update_progress(progress.strip())
+        elif(serialString.startswith("On time:")):
+            on_time = serialString.split(":")[1]
+            # print(on_time)
+            self.ui.update_on_time(on_time.strip())
+        elif(serialString.startswith("Gap time:")):
+            gap_time = serialString.split(":")[1]
+            # print(gap_time)
+            self.ui.update_gap_time(gap_time.strip())
+        elif(serialString.startswith("Play status:")):
+            play_status = serialString.split(":")[1]
+            # print(play_status)
+            self.ui.update_play_status(play_status.strip())
 class MainWindow(QObject):  
     
     def __init__(self):
@@ -153,11 +165,33 @@ class MainWindow(QObject):
     relaySig = Signal(str)
     progressSig = Signal(int)
     listofserialportsReceived = Signal(list)
+    timeSig = Signal(str)
+    gaptimeSig = Signal(str)
+    playstatusSig = Signal(str)
 
     def update_progress(self, progress):
         self.progress = progress
         # print("emitting progress" + progress)
         self.progressSig.emit(int(float(progress)))
+
+    def update_on_time(self, on_time):
+        self.on_time = str(on_time)
+        # print("emitting on_time" + on_time)
+        self.timeSig.emit(self.on_time)
+
+    def update_gap_time(self, gap_time):
+        self.gap_time = str(gap_time)
+        # print("emitting gap_time" + gap_time)
+        self.gaptimeSig.emit(self.gap_time)
+    
+    def update_play_status(self, play_status):
+        self.play_status = str(play_status)
+        if(self.play_status == "1"):
+            self.play_status = "Running"
+        elif(self.play_status == "0"):
+            self.play_status = "Stopped"
+        # print("emitting play_status" + play_status)
+        self.playstatusSig.emit(self.play_status)
 
     def relay_22_on(self):
         print("emitting signal about relay 22 on")

@@ -43,10 +43,16 @@ Window {
     
     Screen01 {
         id: mainScreen
+        disconnect.onClicked: {
+            disconnect.enabled = false
+            mainScreen.connect.enabled = true
+            backend.disconnect_port()
+
+}
         connect.onClicked: {
             backend.connect_port(comboBox.displayText, comboBox1.displayText)
-            mainScreen.comboBox.model = [""]
             connect.enabled = false
+            mainScreen.disconnect.enabled = true
 }
     }
     Connections{

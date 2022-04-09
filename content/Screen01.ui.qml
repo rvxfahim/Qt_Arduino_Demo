@@ -20,6 +20,7 @@ Rectangle {
 
     color: Constants.backgroundColor
     radius: 0
+    property alias disconnect: disconnect
     property alias dial: dial
     property alias text4: text4
     property alias connect: connect
@@ -123,13 +124,14 @@ Rectangle {
         }
 
         Button {
-            id: button
+            id: disconnect
             y: 223
             width: 113
             height: 71
             text: qsTr("Disconnect")
             anchors.left: connect.right
             anchors.leftMargin: 73
+            enabled: false
         }
 
         Pane {
@@ -153,7 +155,7 @@ Rectangle {
                 stepSize: 0.1
 
                 Text {
-                    id: text3
+                    id: timer_text
                     color: "#ffffff"
                     text: qsTr("00")
                     anchors.verticalCenter: parent.verticalCenter
@@ -442,9 +444,9 @@ Rectangle {
 
             Text {
                 id: text4
-                x: 152
-                y: 64
-                text: qsTr("Text")
+                x: 108
+                y: 74
+                text: qsTr("Progress")
                 font.pixelSize: 48
             }
         }
@@ -470,7 +472,7 @@ Rectangle {
 
 /*##^##
 Designer {
-    D{i:0;formeditorZoom:0.75}D{i:33}
+    D{i:0;formeditorZoom:0.75}
 }
 ##^##*/
 

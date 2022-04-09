@@ -11,7 +11,7 @@ exiting = False
 
 list_of_ports = ["A","B"]
 serial_rcv_thread = None
-# ser = serial.Serial("COM5", 9600) 
+ser = None
 serialString = ""  # Initialize the serial string
 
 def serial_ports():
@@ -278,6 +278,15 @@ class MainWindow(QObject):
         print("Connecting to port: " + port + " at baudrate: " + baudrate)
         ser = serial.Serial(port, baudrate)
         serial_rcv_thread.start()
+    @Slot()
+    def disconnect_port(self):
+        global ser
+        global serial_rcv_thread
+        print("Disconnecting port")
+        serial_rcv_thread.terminate()
+        ser.close()
+        print("Port closed")
+        
      
 if __name__ == "__main__":
     app = QGuiApplication(sys.argv)

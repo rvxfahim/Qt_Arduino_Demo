@@ -20,6 +20,8 @@ Rectangle {
 
     color: Constants.backgroundColor
     radius: 0
+    property alias dial: dial
+    property alias text4: text4
     property alias connect: connect
     property alias relay_18: relay_18
     property alias relay_17: relay_17
@@ -144,11 +146,11 @@ Rectangle {
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.left: parent.left
                 wrap: false
-                value: 0
+                value: 50
                 anchors.leftMargin: 49
-                enabled: false
+                enabled: true
                 inputMode: Dial.Circular
-                stepSize: 1
+                stepSize: 0.1
 
                 Text {
                     id: text3
@@ -437,6 +439,14 @@ Rectangle {
                     anchors.rightMargin: 10
                 }
             }
+
+            Text {
+                id: text4
+                x: 152
+                y: 64
+                text: qsTr("Text")
+                font.pixelSize: 48
+            }
         }
     }
 
@@ -460,7 +470,7 @@ Rectangle {
 
 /*##^##
 Designer {
-    D{i:0;formeditorZoom:0.66}D{i:32}
+    D{i:0;formeditorZoom:0.75}D{i:33}
 }
 ##^##*/
 

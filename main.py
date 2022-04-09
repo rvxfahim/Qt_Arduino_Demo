@@ -294,5 +294,5 @@ if __name__ == "__main__":
     #     sys.exit(-1)
     #sys.exit()
     app.exec()
-    print("after app exit")
+    print("after app exit ")
     sys.exit()

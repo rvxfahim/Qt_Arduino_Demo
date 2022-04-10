@@ -20,6 +20,8 @@ Rectangle {
 
     color: Constants.backgroundColor
     radius: 0
+    property alias quit_button: quit_button
+    property alias pane: pane
     property alias mode: mode
     property alias off_time: off_time
     property alias on_time: on_time
@@ -68,6 +70,18 @@ Rectangle {
             y: 8
             width: 352
             height: 664
+
+            Button {
+                id: quit_button
+                y: 570
+                text: qsTr("Quit")
+                anchors.left: parent.left
+                anchors.right: parent.right
+                anchors.bottom: parent.bottom
+                anchors.rightMargin: 20
+                anchors.leftMargin: 20
+                anchors.bottomMargin: 20
+            }
         }
 
         Column {
@@ -663,7 +677,7 @@ Rectangle {
 
 /*##^##
 Designer {
-    D{i:0;formeditorZoom:0.66}D{i:52}D{i:54}
+    D{i:0;formeditorZoom:0.66}
 }
 ##^##*/
 

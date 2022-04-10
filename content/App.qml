@@ -32,7 +32,7 @@ import QtQuick.Window
 import Serial_port_arduino
 
 Window {
-    //flags: Qt.FramelessWindowHint
+    flags: Qt.FramelessWindowHint
     // Material.theme: Material.Dark
     // Material.accent: Material.BlueGrey
     width: mainScreen.width
@@ -43,6 +43,9 @@ Window {
     
     Screen01 {
         id: mainScreen
+        quit_button.onClicked: {
+            Qt.quit()
+}
         disconnect.onClicked: {
             disconnect.enabled = false
             mainScreen.connect.enabled = true
